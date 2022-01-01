@@ -3,8 +3,8 @@ import requests
 import json
 import os
 
-#from dotenv import load_dotenv
-# load_dotenv()  # take environment variables from .env.
+from dotenv import load_dotenv
+load_dotenv()  # take environment variables from .env.
 
 client = discord.Client()
 
@@ -43,6 +43,4 @@ async def on_message(message):
 
         await message.channel.send(embed=embed)
 
-
-token = os.getenv("token")
-client.run(token)
+client.run(os.getenv("CatBotToken"))

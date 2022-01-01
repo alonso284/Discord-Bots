@@ -1,8 +1,10 @@
+from itertools import cycle
+import random
 import discord
 from discord.ext import commands, tasks
 import os
-import random
-from itertools import cycle
+from dotenv import load_dotenv
+load_dotenv()
 
 client = commands.Bot(command_prefix='+')
 status = cycle(['Status 1', 'Status2'])
@@ -140,5 +142,4 @@ async def on_member_join(member):
 async def on_member_remove(member):
     print(f'{member} has left the server')
 
-
-client.run('NzM0NTc3ODkwNDIyNjg1ODM2.XxX9CQ.rX1iqmuofEbIOuQ8RZQe3Y6Yd1c')
+client.run(os.getenv('PruebasToken'))
